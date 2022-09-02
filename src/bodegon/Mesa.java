@@ -17,7 +17,29 @@ public class Mesa {
         this.abonoPrevio = aP;
     }
     
+    public void AgregarComida(Comida c){
+        this.comidas.add(c);
+    }
     
+    public void AgregarBebida(Bebida b){
+        this.bebidas.add(b);
+    }
+    
+    public void EliminarBebida(int b){
+        this.bebidas.remove(b);
+    }
+    
+    public void MostrarComidas(){
+        for (int i = 0; i < this.comidas.size(); i++) {
+            System.out.println("La comida: " + this.comidas.get(i).getNombre() + " cuesta: " + this.comidas.get(i).getPrecio() + ".");
+        }
+    }
+    
+    public void MostrarBebidas(){
+        for (int i = 0; i < this.bebidas.size(); i++) {
+            System.out.println("La bebida: " + this.bebidas.get(i).getNombre() + " cuesta: " + this.bebidas.get(i).getPrecio() + ". Tiene un contenido de: " + this.bebidas.get(i).getContenido() + ".");
+        }
+    }
 
     public static int getCantMesas() {
         return cantMesas;
