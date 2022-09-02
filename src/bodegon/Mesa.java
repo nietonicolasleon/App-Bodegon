@@ -17,25 +17,28 @@ public class Mesa {
         this.abonoPrevio = aP;
     }
     
+    public double CalcularPrecioBebidas(){
+        double total = 0;
+        for (int i = 0; i < this.bebidas.size(); i++) {
+            total += this.bebidas.get(i).getPrecio();
+        }
+        return total;
+    }
+    
     public double CalcularPrecioXPersona(){
         double total = 0;
         for (int i = 0; i < this.comidas.size(); i++) {
             total += this.comidas.get(i).getPrecio();
         }
         total -= this.abonoPrevio;
+        total += CalcularPrecioBebidas();
         total = total / this.cantPersonas;
         return total;
     }
     
     public double CalcularPrecioTotal(){
         double total = 0;
-        for (int i = 0; i < this.comidas.size(); i++) {
-            total += this.comidas.get(i).getPrecio();
-        }
-        total -= this.abonoPrevio;
-        for (int i = 0; i < this.bebidas.size(); i++) {
-            total += this.bebidas.get(i).getPrecio();
-        }
+        total += (CalcularPrecioXPersona() * this.cantPersonas);
         return total;
     }
     
