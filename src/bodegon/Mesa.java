@@ -27,7 +27,17 @@ public class Mesa {
         return total;
     }
     
-    
+    public double CalcularPrecioTotal(){
+        double total = 0;
+        for (int i = 0; i < this.comidas.size(); i++) {
+            total += this.comidas.get(i).getPrecio();
+        }
+        total -= this.abonoPrevio;
+        for (int i = 0; i < this.bebidas.size(); i++) {
+            total += this.bebidas.get(i).getPrecio();
+        }
+        return total;
+    }
     
     public void AgregarComida(Comida c){
         this.comidas.add(c);
