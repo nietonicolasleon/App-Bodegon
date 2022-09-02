@@ -1,14 +1,18 @@
 package bodegon;
 
 public class Comida {
+    /*Esta clase hace referencia a la comida vendida en el bodegón*/
+    //Atributos
     private String nombre;
     private double precio;
     
+    /*Método constructor*/
     public Comida(String n, double p){
         this.nombre = n;
         this.precio = p;
     }
-
+    
+    /*Métodos Accesorios - Getters y Setters*/
     public String getNombre() {
         return nombre;
     }
