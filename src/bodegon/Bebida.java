@@ -1,16 +1,20 @@
 package bodegon;
 
 public class Bebida {
+    /*Esta clase hace referencia a las bebidas vendidas en el bodegón*/
+    //Atributos
     private String nombre;
     private double precio;
     private String contenido;
 
+    /*Método constructor*/
     public Bebida(String n, double p, String c) {
         this.nombre = n;
         this.precio = p;
         this.contenido = c;
     }
 
+    /*Métodos Accesorios - Getters y Setters*/
     public String getNombre() {
         return nombre;
     }
