@@ -42,6 +42,18 @@ public class Mesa {
         return total;
     }
     
+    public void DetalleCuenta(){
+        System.out.println("***** Mesa: " + this.numMesa + " *****");
+        System.out.println("Comensales: " + this.cantPersonas);
+        System.out.println("Detalle de los pedidos: ");
+        MostrarComidas();
+        System.out.println("--------------------------------------------------");
+        MostrarBebidas();
+        System.out.println("--------------------------------------------------");
+        System.out.println("El precio por persona es de: $" + CalcularPrecioXPersona());
+        System.out.println("Y el precio total de: $" + CalcularPrecioTotal());
+    }
+    
     public void AgregarComida(Comida c){
         this.comidas.add(c);
     }
