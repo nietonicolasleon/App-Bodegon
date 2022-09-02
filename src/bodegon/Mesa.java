@@ -17,6 +17,18 @@ public class Mesa {
         this.abonoPrevio = aP;
     }
     
+    public double CalcularPrecioXPersona(){
+        double total = 0;
+        for (int i = 0; i < this.comidas.size(); i++) {
+            total += this.comidas.get(i).getPrecio();
+        }
+        total -= this.abonoPrevio;
+        total = total / this.cantPersonas;
+        return total;
+    }
+    
+    
+    
     public void AgregarComida(Comida c){
         this.comidas.add(c);
     }
